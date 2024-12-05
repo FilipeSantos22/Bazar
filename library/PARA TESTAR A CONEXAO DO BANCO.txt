@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS public.pessoa
+(
+   	ID SERIAL PRIMARY KEY,
+    nome character varying(255) COLLATE pg_catalog."default",
+    cpf character varying(14) COLLATE pg_catalog."default",
+    telefone character varying(20) COLLATE pg_catalog."default",
+    sexo character varying(20) COLLATE pg_catalog."default",
+    cep character varying(50) COLLATE pg_catalog."default" NOT NULL DEFAULT '0'
+);
+
+CREATE TABLE IF NOT EXISTS public.endereco
+(
+    idendereco serial NOT NULL PRIMARY KEY,
+    cep character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    idpessoa integer,
+    logradouro character varying(255) COLLATE pg_catalog."default",
+    complemento character varying(255) COLLATE pg_catalog."default",
+    bairro character varying(100) COLLATE pg_catalog."default",
+    localidade character varying(100) COLLATE pg_catalog."default",
+    uf character varying(2) COLLATE pg_catalog."default",
+    ibge character varying(7) COLLATE pg_catalog."default",
+    gia character varying(10) COLLATE pg_catalog."default",
+    ddd character varying(2) COLLATE pg_catalog."default",
+    siafi character varying(10) COLLATE pg_catalog."default",
+    CONSTRAINT endereco_idpessoa_fkey FOREIGN KEY (idpessoa)
+        REFERENCES public.pessoa (id) MATCH SIMPLE
+);
