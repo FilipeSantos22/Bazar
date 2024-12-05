@@ -26,11 +26,6 @@
                           <td class=" text-light">'.number_format(floatval(str_replace(',', '.', $produto->getPreco())), 2, '.', '').'</td>
                           <td class=" text-light">'.$produto->getQuantidade().'</td>
                           <td class=" text-light">'.$produto->getCategoria().'</td>                     
-                          <td>
-                            <a href="controllers/venderProduto.php?id='.$produto->getId().'">
-                              <button type="button" class="btn btn-primary">Vender</button>
-                            </a>
-                          </td>
                           <td> 
                             <input 
                               type="checkbox" 
@@ -92,105 +87,68 @@
 </body>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const checkboxes = document.querySelectorAll('.produto-checkbox');
-    const valorTotalElement = document.getElementById('valorTotal');
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('.produto-checkbox');
+        const valorTotalElement = document.getElementById('valorTotal');
 
-    // Função para calcular o valor total
-    const calcularTotal = () => {
-      let total = 0;
+        // Função para calcular o valor total
+        const calcularTotal = () => {
+            let total = 0;
 
-      checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          total += parseFloat(checkbox.getAttribute('data-preco'));
-        }
-      });
-
-      valorTotalElement.textContent = total.toFixed(2); // Atualiza o total na página
-    };
-
-    // Adiciona evento em cada checkbox
-    checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', calcularTotal);
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const formVenda = document.getElementById('form-venda');
-    const checkboxes = document.querySelectorAll('.produto-checkbox');
-    const inputProdutos = document.getElementById('produtos');
-    const inputTotal = document.getElementById('total');
-
-    formVenda.addEventListener('submit', function (event) {
-        const produtosSelecionados = [];
-        let totalVenda = 0;
-
-        checkboxes.forEach(checkbox => {
+            checkboxes.forEach(checkbox => {
             if (checkbox.checked) {
-                const id = checkbox.dataset.id;
-                const preco = parseFloat(checkbox.dataset.preco);
-
-                produtosSelecionados.push({ id, preco });
-                totalVenda += preco;
+                total += parseFloat(checkbox.getAttribute('data-preco'));
             }
+            });
+
+                valorTotalElement.textContent = total.toFixed(2); // Atualiza o total na página
+        };
+
+        // Adiciona evento em cada checkbox
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', calcularTotal);
         });
-
-        if (produtosSelecionados.length === 0) {
-            alert('Selecione pelo menos um produto para realizar a venda.');
-            event.preventDefault();
-            return;
-        }
-
-        inputProdutos.value = JSON.stringify(produtosSelecionados);
-        inputTotal.value = totalVenda.toFixed(2);
     });
-});
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const formVenda = document.getElementById('form-venda');
+        const checkboxes = document.querySelectorAll('.produto-checkbox');
+        const inputProdutos = document.getElementById('produtos');
+        const inputTotal = document.getElementById('total');
+
+        formVenda.addEventListener('submit', function (event) {
+            const produtosSelecionados = [];
+            let totalVenda = 0;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const id = checkbox.dataset.id;
+                    const preco = parseFloat(checkbox.dataset.preco);
+
+                    produtosSelecionados.push({ id, preco });
+                    totalVenda += preco;
+                }
+            });
+
+            if (produtosSelecionados.length === 0) {
+                alert('Selecione pelo menos um produto para realizar a venda.');
+                event.preventDefault();
+                return;
+            }
+
+            // Adiciona o alerta de confirmação
+            const confirmarVenda = window.confirm('Tem certeza que deseja realizar esta venda?');
+
+            if (!confirmarVenda) {
+                event.preventDefault(); // Impede o envio do formulário se o usuário cancelar
+                return;
+            }
+
+            inputProdutos.value = JSON.stringify(produtosSelecionados);
+            inputTotal.value = totalVenda.toFixed(2);
+        });
+    });
 
 
-//   document.addEventListener('DOMContentLoaded', function () {
-//     const novaVendaBtn = document.getElementById('nova-venda-btn');
-//     const checkboxes = document.querySelectorAll('.produto-checkbox');
-
-//     novaVendaBtn.addEventListener('click', function () {
-//         const produtosSelecionados = [];
-//         let totalVenda = 0;
-
-//         // Obter os produtos selecionados e calcular o total
-//         checkboxes.forEach(checkbox => {
-//             if (checkbox.checked) {
-//                 const id = checkbox.dataset.id;
-//                 const preco = parseFloat(checkbox.dataset.preco);
-
-//                 produtosSelecionados.push({ id, preco });
-//                 totalVenda += preco;
-//             }
-//         });
-
-//         if (produtosSelecionados.length === 0) {
-//             alert('Selecione pelo menos um produto para realizar a venda.');
-//             return;
-//         }
-
-//         // Enviar dados para o servidor
-//         fetch('/venda/cadastrar', {
-//             method: 'POST',
-//             headers: { 'Content-Type': 'application/json' },
-//             body: JSON.stringify({ produtos: produtosSelecionados, total: totalVenda.toFixed(2) })
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.success) {
-//                 alert('Venda realizada com sucesso!');
-//                 location.reload();
-//             } else {
-//                 alert('Erro ao realizar a venda: ' + data.message);
-//             }
-//         })
-//         .catch(error => {
-//             console.error('Erro:', error);
-//             alert('Ocorreu um erro ao processar a venda.');
-//         });
-//     });
-// });
 
 </script>
