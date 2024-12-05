@@ -7,9 +7,9 @@
 
   <div class="container">
     <!-- <div class="border-primary"> -->
-    <div class="left-side" id="borda-foto"></div><!--  Lado da foto -->
+    <!--<div class="left-side" id="borda-foto"></div>--><!--  Lado da foto -->
 
-        <div class="right-side " id="borda-form"><!--  Lado do FORMULÁRIO -->
+        <div class="right-side borda-form" id="borda-form"><!--  Lado do FORMULÁRIO -->
           
           <h2 class="text-center mb-5 text-light "><?=TITLE?></h2>
           
@@ -29,10 +29,10 @@
                 <input type="text" class="form-control" id="quantidade" name="quantidade" onkeypress="mascara(this)" placeholder="Qual a quantidade?" required maxlength="3"   value="<?=$obProduto->getQuantidade()?>">  
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label class="text-light" for="name">Categoria:</label>
-                <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Qual a categoria?" required value="<?= $obProduto->getCategoria()?>">
-              </div>
+                <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Qual a categoria?" required value="">
+              </div> -->
 
               <input type="submit" id="enviarBtn" onclick="messageSuccess(event)" class="btn btn-primary mr-3">    
               <a href="/Bazar/index.php">

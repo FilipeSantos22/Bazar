@@ -9,7 +9,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/Bazar/controllers/cadastrarProduto.php">
                     <img                        
-                        src="/Bazar/view/images/logo.png"
+                        src="/Bazar/view/images/logo_IRC_branca_horizontal.png"
                         class="me-2"
                         height="100"
                         width="210"

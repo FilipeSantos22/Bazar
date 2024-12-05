@@ -23,8 +23,8 @@ class Produto {
         $this->id = $db->insert([
             'nome' => $this->nome,
             'preco' => $this->preco,
-            'quantidade' => $this->quantidade,
-            'categoria' => $this->categoria
+            'quantidade' => $this->quantidade
+            /*'categoria' => $this->categoria*/
         ]);
         return true;
     }

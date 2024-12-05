@@ -10,17 +10,17 @@ $errorMessage = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
 $obProduto = new Produto();
 $obEndereco = new Venda();
 
-if(isset($_POST['nome'], $_POST['preco'], $_POST['quantidade'], $_POST['categoria'])) {
+if(isset($_POST['nome'], $_POST['preco'], $_POST['quantidade']/*, $_POST['categoria']*/)) {
     
     $obProduto = new Produto();
     
     $obProduto->setNome ($_POST['nome']);
     $obProduto->setPreco  ($_POST['preco']);
     $obProduto->setQuantidade ($_POST['quantidade']);
-    $obProduto->setCategoria ($_POST['categoria']);
+    // $obProduto->setCategoria ($_POST['categoria']);
 
     $obProduto->cadastrar();            
-    sleep(5);
+    sleep(2);
     header('Location: /Bazar/index.php?status=success');
     exit;   
 

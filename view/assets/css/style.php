@@ -8,14 +8,14 @@
       margin: 50px ;
     }
 
-    .left-side {
+    /* .left-side {
       width: 50%;
       height: 100%;
       margin: 0; 
       background-image: url('/Bazar/view/images/arte-prog.png');
       background-repeat: no-repeat;
       background-size: cover;
-    }
+    } */
 
     .right-side {
       width: 50%;
@@ -47,16 +47,17 @@
         background-color: #345865;
     }
 
-    #borda-form {
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
+    .borda-form {
+      /* border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px; */
+      border-radius:10px;
       box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
     }
 
     #borda-foto {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
-      box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+      /* box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5); */
     }
 
     .footer {

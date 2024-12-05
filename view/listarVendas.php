@@ -32,7 +32,7 @@ $vendas = Venda::getVendas('is_deleted = FALSE'); // Filtrar vendas não excluí
                 <tr class="bg-color">
                     <th scope="col" class="table_color text-light">ID</th>
                     <th scope="col" class="table_color text-light">Valor da Venda</th>
-                    <th scope="col" class="table_color text-light">Ações</th>
+                    <th scope="col" class="table_color text-light">Ação</th>
                 </tr>
             </thead>
             <tbody>
