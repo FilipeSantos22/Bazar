@@ -48,17 +48,17 @@
     <a href="/Bazar/controllers/cadastrarProduto.php">
         <button class="btn btn-primary mt-3 ">Novo Produto</button>
     </a>
-    <!-- <a href="/Bazar/controllers/cadastrarVenda.php">
-      <button class="btn btn-success mt-3 ">Nova Venda</button>
-    </a> -->
-    <!-- <button id="nova-venda-btn" class="btn btn-success mt-3">Nova Venda</button> -->
-     <!-- Botão Nova Venda -->
+    <a href="/Bazar/view/confirmarVenda.php">
+        <button class="btn btn-primary mt-3 ">Valor total vendido</button>
+    </a>
+    <a href="/Bazar/view/listarVendas.php">
+            <button class="btn btn-danger mt-3">Excluir Venda</button>
+    </a>
     <form id="form-venda" action="/Bazar/controllers/cadastrarVenda.php" method="POST">
         <input type="hidden" name="produtos" id="produtos">
         <input type="hidden" name="total" id="total">
         <button type="submit" class="btn btn-success mt-3">Nova Venda</button>
     </form>
-
 
     <h2 class="text-center mt-2">Produtos cadastrados</h2>
   </div>

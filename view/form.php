@@ -36,7 +36,7 @@
 
               <input type="submit" id="enviarBtn" onclick="messageSuccess(event)" class="btn btn-primary mr-3">    
               <a href="/Bazar/index.php">
-                <div class="btn btn-primary m3-3 ">Ver cadastros</div>
+                <div class="btn btn-primary m3-3 ">Ver Produtos</div>
               </a>   
 
               <div id="successMessage" class="success-message">Form submitted successfully!</div>

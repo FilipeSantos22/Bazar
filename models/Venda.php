@@ -57,6 +57,30 @@ class Venda {
             'preco_unitario' => $preco_unitario,
         ]);     
     }
+
+    /**
+     * Método para calcular o total acumulado de todas as vendas.
+     */
+    public static function getTotalVendas() {
+        $obDatabase = new DataBase('vendas');
+        
+        $query = 'SELECT total_arrecadado FROM vendas where is_deleted = FALSE';
+        
+        // Executando a consulta
+        $result = $obDatabase->execute($query)->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Variável para armazenar o total das vendas
+        $totalVendas = 0;
+        
+        // Itera sobre os resultados e converte cada 'total_arrecadado' de VARCHAR para número
+        foreach ($result as $row) {
+            // Converter o valor de 'total_arrecadado' para float e somar
+            $totalVendas += (float) str_replace(',', '.', $row['total_arrecadado']);
+        }
+        
+        // Retorna o valor total das vendas
+        return number_format($totalVendas, 2, '.', '');
+    }
     
 
     public static function getVendas($where = null, $order = null, $limit = 100) {
@@ -80,6 +104,13 @@ class Venda {
         $this->total_arrecadado = number_format((float)$total, 2, '.', '');
         return $this;
     }
+
+    public function excluirVenda() {
+        $obDatabase = new DataBase('vendas');
+        // Atualiza o campo is_deleted para TRUE
+        return $obDatabase->update('id = ' . $this->id, ['is_deleted' => 1]);
+    }
+    
 
      /**
      * Método para obter o valor total arrecadado da venda.
