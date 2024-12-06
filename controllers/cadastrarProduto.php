@@ -21,7 +21,7 @@ if(isset($_POST['nome'], $_POST['preco'], $_POST['quantidade']/*, $_POST['catego
 
     $obProduto->cadastrar();            
     sleep(2);
-    header('Location: /Bazar/index.php?status=success');
+    header('Location: https://bazarirc.com/index.php?status=success');
     exit;   
 
 }

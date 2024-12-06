@@ -12,7 +12,7 @@
       width: 50%;
       height: 100%;
       margin: 0; 
-      background-image: url('/Bazar/view/images/arte-prog.png');
+      background-image: url('https://bazarirc.com/view/images/arte-prog.png');
       background-repeat: no-repeat;
       background-size: cover;
     } */

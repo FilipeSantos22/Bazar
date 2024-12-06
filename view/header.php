@@ -7,9 +7,9 @@
         <header>
             <div class="navbar navbar-light bg-color">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/Bazar/controllers/cadastrarProduto.php">
+                    <a class="navbar-brand" href="https://bazarirc.com/controllers/cadastrarProduto.php">
                     <img                        
-                        src="/Bazar/view/images/logo_IRC_branca_horizontal.png"
+                        src="https://bazarirc.com/view/images/logo_IRC_branca_horizontal.png"
                         class="me-2"
                         height="100"
                         width="210"

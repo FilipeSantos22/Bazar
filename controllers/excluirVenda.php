@@ -10,9 +10,9 @@ if (isset($_GET['id'])) {
 
     $venda->excluirVenda();
     
-    header('Location: /Bazar/view/listarVendas.php?status=success');
+    header('Location: https://bazarirc.com/view/listarVendas.php?status=success');
     exit;
 } else {
-    header('Location: /Bazar/controllers/listarVendas.php?status=error');
+    header('Location: https://bazarirc.com/controllers/listarVendas.php?status=error');
     exit;
 }

@@ -1,5 +1,5 @@
 <head>
-    <script src="/Bazar/view/assets/js/scripts.js"></script>
+    <script src="https://bazarirc.com/view/assets/js/scripts.js"></script>
 </head>
 
 </head>
@@ -35,7 +35,7 @@
               </div> -->
 
               <input type="submit" id="enviarBtn" onclick="messageSuccess(event)" class="btn btn-primary mr-3">    
-              <a href="/Bazar/index.php">
+              <a href="https://bazarirc.com/index.php">
                 <div class="btn btn-primary m3-3 ">Ver Produtos</div>
               </a>   
 

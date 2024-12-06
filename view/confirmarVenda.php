@@ -20,7 +20,7 @@ $totalVendas = Venda::getTotalVendas();
 
         <div class="text-center mt-4">
             <h3 class="text-center">Valor total de vendas realizadas: R$ <?= number_format($totalVendas, 2, ',', '.') ?></h3>
-            <a href="/Bazar/index.php">
+            <a href="https://bazarirc.com/index.php">
                 <button class="btn btn-primary mt-3">Voltar ao Estoque</button>
             </a>
         </div>

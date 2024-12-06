@@ -51,16 +51,16 @@ foreach ($produtos as $produto) {
 
 <div class="text-center">
     <h2 class="text-center mt-2">Produtos cadastrados</h2>
-    <a href="/Bazar/controllers/cadastrarProduto.php">
+    <a href="https://bazarirc.com/controllers/cadastrarProduto.php">
         <button class="btn btn-primary mt-3">Novo Produto</button>
     </a>
-    <a href="/Bazar/view/confirmarVenda.php">
+    <a href="https://bazarirc.com/view/confirmarVenda.php">
         <button class="btn btn-info  mt-3">Valor Total Vendido</button>
     </a>
-    <a href="/Bazar/view/listarVendas.php">
+    <a href="https://bazarirc.com/view/listarVendas.php">
         <button class="btn btn-danger mt-3">Excluir Venda</button>
     </a>
-    <form id="form-venda" action="/Bazar/controllers/cadastrarVenda.php" method="POST">
+    <form id="form-venda" action="https://bazarirc.com/controllers/cadastrarVenda.php" method="POST">
         <input type="hidden" name="produtos" id="produtos">
         <input type="hidden" name="total" id="total">
         <button type="submit" class="btn btn-success mt-3">Nova Venda</button>

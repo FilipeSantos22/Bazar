@@ -5,12 +5,12 @@ define('TITLE', 'Editar Cadastro');
 $obProduto = Produto::getProduto($_GET['id']);
 
 if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {
-    header('Location: /Bazar/index.php?status=error');
+    header('Location: https://bazarirc.com/index.php?status=error');
     exit;
 }
 
 if(!$obProduto instanceof Produto) {
-    header('Location: /Bazar/index.php?status=error');
+    header('Location: https://bazarirc.com/index.php?status=error');
 }
 
 if(isset($_POST['nome'], $_POST['preco'], $_POST['quantidade']/*, $_POST['categoria']*/)) {
@@ -21,7 +21,7 @@ if(isset($_POST['nome'], $_POST['preco'], $_POST['quantidade']/*, $_POST['catego
     // $obProduto->setCategoria ($_POST['categoria']);
     $obProduto->atualizar(); 
 
-    header('Location: /Bazar/index.php?status=success');
+    header('Location: https://bazarirc.com/index.php?status=success');
     exit;
 }
 

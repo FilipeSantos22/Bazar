@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         // Redireciona para a confirmação da venda
-        header('Location: /Bazar/view/confirmarVenda.php?venda=success');
+        header('Location: https://bazarirc.com/view/confirmarVenda.php?venda=success');
         exit;
     } else {
-        header('Location: /Bazar/view/confirmarVenda.php?venda=error');
+        header('Location: https://bazarirc.com/view/confirmarVenda.php?venda=error');
         exit;
     }
 }

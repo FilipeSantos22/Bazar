@@ -21,7 +21,7 @@ $vendas = Venda::getVendas('is_deleted = FALSE'); // Filtrar vendas não excluí
 <section>
     <div class="container-fluid" style="max-height: 600px; max-width: 70%; overflow-y: auto;">
         <h2 class="text-center mb-4">Vendas Registradas</h2>
-        <a href="/Bazar/index.php">
+        <a href="https://bazarirc.com//index.php">
             <div class="btn btn-primary m3-3 ">Ver Produtos</div>
         </a> 
         
@@ -48,7 +48,7 @@ $vendas = Venda::getVendas('is_deleted = FALSE'); // Filtrar vendas não excluí
                         </td>
                         <td>
                             <!-- Botão de excluir venda -->
-                            <a href="/Bazar/controllers/excluirVenda.php?id=<?= $venda->id ?>" class="btn btn-danger">
+                            <a href="https://bazarirc.com/controllers/excluirVenda.php?id=<?= $venda->id ?>" class="btn btn-danger">
                                 Excluir
                             </a>
                         </td>
