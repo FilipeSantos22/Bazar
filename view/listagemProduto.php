@@ -18,7 +18,6 @@ $resultados = '';
 foreach ($produtos as $produto) {
     if ($produto->getQuantidade() > 0) {
         $resultados .= '<tr>
-                            <td class="text-light">' . $produto->getId() . '</td>
                             <td class="text-light">' . $produto->getNome() . '</td>
                             <td class="text-light">' . number_format(floatval(str_replace(',', '.', $produto->getPreco())), 2, '.', '') . '</td>
                             <td class="text-light">' . $produto->getQuantidade() . '</td>
@@ -77,7 +76,6 @@ foreach ($produtos as $produto) {
         <table class="table table-striped bg-color">
             <thead>
                 <tr class="bg-color">
-                    <th scope="col" class="table_color text-light">ID</th>
                     <th scope="col" class="table_color text-light">Nome</th>
                     <th scope="col" class="table_color text-light">Preço</th>
                     <th scope="col" class="table_color text-light">Quantidade</th>
