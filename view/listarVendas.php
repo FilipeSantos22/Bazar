@@ -30,7 +30,6 @@ $vendas = Venda::getVendas('is_deleted = FALSE'); // Filtrar vendas não excluí
         <table class="table table-striped bg-color">
             <thead>
                 <tr class="bg-color">
-                    <th scope="col" class="table_color text-light">ID</th>
                     <th scope="col" class="table_color text-light">Valor da Venda</th>
                     <th scope="col" class="table_color text-light">Ação</th>
                 </tr>
@@ -38,7 +37,6 @@ $vendas = Venda::getVendas('is_deleted = FALSE'); // Filtrar vendas não excluí
             <tbody>
                 <?php foreach ($vendas as $venda): ?>
                     <tr>
-                        <td><?= $venda->id ?></td>
                         <td>
                             <?php
                             // Garantir que o valor de total_arrecadado seja convertido para float antes de formatar
